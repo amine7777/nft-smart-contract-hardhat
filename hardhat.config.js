@@ -1,6 +1,16 @@
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
+
+/**
+ * @type import('hardhat/config').HardhatUserConfig
+ */
+ module.exports = {
+  solidity: "0.8.10",
+};
+
+/*
 require('@nomiclabs/hardhat-ethers');
 
 const privateKey = process.env.PRIVATE_KEY;
@@ -21,4 +31,4 @@ module.exports = {
   etherscan: {
     apiKey: etherscanKey
   }
-}
+} */
