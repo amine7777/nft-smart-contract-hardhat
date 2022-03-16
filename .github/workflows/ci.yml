@@ -17,24 +17,14 @@ jobs:
 
     - name: Get nodejs version
       run: node -v
-    - run: export TOTO=hola
-      
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-    name: test
-    steps:
-    - uses: actions/checkout@v2
 
-    - name: Get nodejs version
-      run: node -v
-    - run: echo $TOTO
-      
-  job3:
-    runs-on: ubuntu-latest
-    name: deploy
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Get nodejs version
-      run: node -v
+    - name: Install hardhat and dependencies
+      run: npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers @nomiclabs/hardhat-etherscan ethers
+    
+    - name: Check Hardhat 
+      run: npx hardhat --help
+    
+    - name: Compile smart contract
+      run: |
+        npx hardhat compile
+        ls -la
