@@ -11,7 +11,25 @@ name: CI
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: build example and deploy to minikube
+    name: compile
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get nodejs version
+      run: node -v
+      
+  job2:
+    runs-on: ubuntu-latest
+    name: test
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get nodejs version
+      run: node -v
+      
+  job3:
+    runs-on: ubuntu-latest
+    name: deploy
     steps:
     - uses: actions/checkout@v2
 
