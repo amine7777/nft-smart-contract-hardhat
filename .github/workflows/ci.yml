@@ -20,14 +20,14 @@ jobs:
     - run: export TOTO=hola
       
   job2:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestß
     name: test
     steps:
     - uses: actions/checkout@v2
 
     - name: Get nodejs version
       run: node -v
-    - run: echo $TOTOs
+    - run: echo $TOTO
       
   job3:
     runs-on: ubuntu-latest
