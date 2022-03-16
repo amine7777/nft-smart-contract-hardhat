@@ -17,6 +17,7 @@ jobs:
 
     - name: Get nodejs version
       run: node -v
+    - run: export TOTO=hola
       
   job2:
     runs-on: ubuntu-latest
@@ -26,6 +27,7 @@ jobs:
 
     - name: Get nodejs version
       run: node -v
+    - run: echo $TOTOs
       
   job3:
     runs-on: ubuntu-latest
