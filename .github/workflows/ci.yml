@@ -30,7 +30,7 @@ jobs:
     
     - name: Compile smart contract
       run: |
-        npx hardhat compile --network rinkeby
+        npx hardhat compile --network localhost
         ls -la
       env:
         URL: ${{ secrets.URL }}
@@ -39,7 +39,7 @@ jobs:
 
     - name: Test smart contract
       run: |
-        npx hardhat test --network rinkeby
+        npx hardhat test --network localhost
       env:
         URL: ${{ secrets.URL }}
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
@@ -47,7 +47,7 @@ jobs:
 
     - name: Deploy smart contract
       run: |
-        npx hardhat run scripts/deploy.js --network rinkeby
+        npx hardhat run scripts/deploy.js --network localhost
       env:
         URL: ${{ secrets.URL }}
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
