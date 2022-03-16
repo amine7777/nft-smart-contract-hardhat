@@ -20,7 +20,7 @@ jobs:
     - run: export TOTO=hola
       
   job2:
-    runs-on: ubuntu-latestß
+    runs-on: ubuntu-latest
     name: test
     steps:
     - uses: actions/checkout@v2
