@@ -6,7 +6,7 @@
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
- equire('@nomiclabs/hardhat-ethers');
+ require('@nomiclabs/hardhat-ethers');
  module.exports = {
   solidity: "0.8.10",
 };
