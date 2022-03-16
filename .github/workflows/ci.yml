@@ -26,5 +26,7 @@ jobs:
     
     - name: Compile smart contract
       run: |
-        npx hardhat compile
+        npx hardhat compile --network rinkeby
         ls -la
+      env:
+        URL: ${{ secrets.URL }}
