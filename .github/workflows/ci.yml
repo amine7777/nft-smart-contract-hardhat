@@ -15,7 +15,7 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: Deploy smart contract on $NETWORK
+    name: Deploy smart contract
     steps:
     - uses: actions/checkout@v2
 
