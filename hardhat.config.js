@@ -15,14 +15,14 @@ module.exports = {
   },
   networks: {
     loclahost: {
-      url: "http://127.0.0.1:8545/"
+      url: "http://127.0.0.1:8545/",
     },
     rinkeby: {
       url: endpoint,
-      accounts: [`0x${privateKey}`]
+      accounts: [`0x${privateKey}`],
     }
   },
   etherscan: {
-    apiKey: etherscanKey
+    apiKey: etherscanKey,
   }
 } 
