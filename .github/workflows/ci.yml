@@ -9,6 +9,9 @@ name: CI
     - cron: "0 7 * * 3"  # minute (0 - 59)-hour (0 - 23)-day of the month (1 - 31)-month (1 - 12)-day of the week (0 - 6)
 env:
   NETWORK: localhost
+  URL: ${{ secrets.URL }}
+  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+  ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -24,35 +27,20 @@ jobs:
     
     - name: Check Hardhat 
       run: npx hardhat --help --network $NETWORK
-      env:
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
     
     - name: Compile smart contract
       run: |
         npx hardhat compile --network $NETWORK
         ls -la
-      env:
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
 
     - name: Test smart contract
       run: |
         npx hardhat node & sleep 60; npx hardhat test --network $NETWORK
-      env:
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
 
     - name: Deploy smart contract
       run: |
         npx hardhat run scripts/deploy.js --network $NETWORK
-      env:
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
+
 
 
 
