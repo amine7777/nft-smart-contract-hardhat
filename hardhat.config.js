@@ -4,7 +4,7 @@
 
 require('@nomiclabs/hardhat-ethers');
 
-const privateKey = process.env.PRIVATE_KEY;
+const privateKey = process.env.PRIVATE_KEY.toString();
 const endpoint = process.env.URL;
 const etherscanKey = process.env.ETHERSCAN_KEY;
 
