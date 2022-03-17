@@ -2,16 +2,6 @@
  * @type import('hardhat/config').HardhatUserConfig
  */
 
-
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
- require('@nomiclabs/hardhat-ethers');
- module.exports = {
-  solidity: "0.8.10",
-};
-
-/*
 require('@nomiclabs/hardhat-ethers');
 
 const privateKey = process.env.PRIVATE_KEY;
@@ -24,6 +14,9 @@ module.exports = {
     version: "0.8.10",
   },
   networks: {
+    loclahost: {
+      url: http://127.0.0.1:8545/
+    },
     rinkeby: {
       url: endpoint,
       accounts: [`0x${privateKey}`]
@@ -32,4 +25,4 @@ module.exports = {
   etherscan: {
     apiKey: etherscanKey
   }
-} */
+} 
