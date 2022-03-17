@@ -19,7 +19,7 @@ module.exports = {
     },
     rinkeby: {
       url: endpoint,
-      accounts: [`${privateKey}`],
+      accounts: [privateKey],
     }
   },
   etherscan: {
