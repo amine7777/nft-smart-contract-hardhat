@@ -16,7 +16,7 @@ module.exports = {
   networks: {
     loclahost: {
       url: "http://127.0.0.1:8545/",
-    },
+    }/*,
     rinkeby: {
       url: endpoint,
       accounts: [privateKey],
@@ -24,5 +24,5 @@ module.exports = {
   },
   etherscan: {
     apiKey: etherscanKey,
-  }
+  }*/
 } 
