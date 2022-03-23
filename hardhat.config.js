@@ -5,7 +5,7 @@ require('dotenv').config()
 require('@nomiclabs/hardhat-ethers');
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const ENDPOINT = process.env.URL.toString();
+const ENDPOINT = process.env.URL;
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
       url: "http://127.0.0.1:8545",
     },
     rinkeby: {
-      url: ENDPOINT,
+      url: `${ENDPOINT}`,
       accounts: [`0x${PRIVATE_KEY}`],
     }
   },
