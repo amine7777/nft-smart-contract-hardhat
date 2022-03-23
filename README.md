@@ -5,7 +5,6 @@ This is my first project with solidity. I have been inspired by some tutorials o
 # Requirements
 - npm
 - nodejs
-- hardhat
 
 # Usage 
 
