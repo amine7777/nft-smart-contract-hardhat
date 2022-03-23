@@ -9,6 +9,7 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ENDPOINT = process.env.URL;
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
 
+console.log(PRIVATE_KEY);
 console.log([`0x${PRIVATE_KEY}`,]);
 
 
