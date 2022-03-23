@@ -18,31 +18,18 @@ jobs:
         network:
           - localhost
           - rinkeby
-
+    env:
+      NETWORK: ${{ matrix.network }}
+      URL: ${{ secrets.URL }}
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
       
     steps:
     - uses: actions/checkout@v2
 
     - name: Get nodejs version
-      run: |
-        node -v
-        env
-        ls -la
-      
-    - name: create env file
-      run: |
-        touch .env
-        echo TEST=${TEST} >> .env
-        echo PRIVATE_KEY=${PRIVATE_KEY} >> .env
-        cat .env
-        ls -la
-      env:
-        NETWORK: ${{ matrix.network }}
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
-        TEST: ${{ secrets.TEST }}
-        
+      run: node -v
+
     - name: Install hardhat and dependencies
       run: npm install --no-fund --save-dev dotenv @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers @nomiclabs/hardhat-etherscan ethers
     
@@ -53,32 +40,15 @@ jobs:
       run: |
         npx hardhat compile --network $NETWORK
         ls -la
-      env:
-        NETWORK: ${{ matrix.network }}
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
-        TEST: ${{ secrets.TEST }}
 
     - name: Test smart contract
       run: |
          npx hardhat test --network $NETWORK
-      env:
-        NETWORK: ${{ matrix.network }}
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
-        TEST: ${{ secrets.TEST }}
 
     - name: Deploy smart contract
       run: |
         npx hardhat run scripts/deploy.js --network $NETWORK
-      env:
-        NETWORK: ${{ matrix.network }}
-        URL: ${{ secrets.URL }}
-        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
-        TEST: ${{ secrets.TEST }}
+
 
 
 
