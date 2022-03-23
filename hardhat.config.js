@@ -24,5 +24,5 @@ module.exports = {
   },
   etherscan: {
     apiKey: etherscanKey,
-  }*/
+  }
 } 
