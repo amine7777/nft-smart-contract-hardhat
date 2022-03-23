@@ -17,7 +17,7 @@ module.exports = {
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545/",
-    },
+    },/*
     rinkeby: {
       url: ENDPOINT,
       accounts: [`0x${PRIVATE_KEY}`],
@@ -25,5 +25,5 @@ module.exports = {
   },
   etherscan: {
     apiKey: ETHERSCAN_KEY,
-  }
+  }*/
 } 
