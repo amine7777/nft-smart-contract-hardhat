@@ -5,7 +5,7 @@ require('dotenv').config()
 require('@nomiclabs/hardhat-ethers');
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const ENDPOINT = process.env.URL;
+const ENDPOINT = process.env.URL.toString();
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
 
 module.exports = {
