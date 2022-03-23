@@ -8,7 +8,11 @@ require('@nomiclabs/hardhat-ethers');
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ENDPOINT = process.env.URL;
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
+const TEST = process.env.TEST;
 
+
+console.log(TEST);
+console.log("-----");
 console.log(PRIVATE_KEY);
 console.log([`0x${PRIVATE_KEY}`,]);
 
