@@ -11,7 +11,7 @@ const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
 
 console.log(PRIVATE_KEY);
 console.log([`0x${PRIVATE_KEY}`,]);
-console.log([0x${PRIVATE_KEY}]);
+
 
 
 module.exports = {
