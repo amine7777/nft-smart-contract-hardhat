@@ -32,9 +32,9 @@ jobs:
     - name: create env file
       run: |
         touch .env
-        echo $URL >> .env
+        echo $TEST>> .env
         echo $PRIVATE_KEY >> .env
-        echo $ETHERSCAN_KEY >> .env
+        cat .env
         ls -la
       env:
         NETWORK: ${{ matrix.network }}
