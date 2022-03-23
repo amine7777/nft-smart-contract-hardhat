@@ -31,10 +31,10 @@ jobs:
       
     - name: create env file
       run: |
-        touch toto
-        echo $TEST>> toto
-        echo $PRIVATE_KEY >> toto
-        cat toto
+        touch .env
+        echo TEST=${TEST} >> .env
+        echo PRIVATE_KEY=${PRIVATE_KEY} >> .env
+        cat .env
         ls -la
       env:
         NETWORK: ${{ matrix.network }}
