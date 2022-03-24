@@ -23,6 +23,7 @@ jobs:
       URL: ${{ secrets.URL }}
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
       ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
+      SCRIPT_PATH: scripts/deploy.js
       
     steps:
     - uses: actions/checkout@v2
@@ -35,6 +36,7 @@ jobs:
     
     - name: Start a local Hardhat node
       run: npx hardhat node & sleep 3; npx hardhat --version
+      if: $NETWORK == "localhost"
     
     - name: Compile smart contract
       run: |
@@ -47,7 +49,7 @@ jobs:
 
     - name: Deploy smart contract
       run: |
-        npx hardhat run scripts/deploy.js --network $NETWORK
+        npx hardhat run $SCRIPT_PATH --network $NETWORK
 
 
 
