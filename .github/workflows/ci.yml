@@ -36,7 +36,7 @@ jobs:
     
     - name: Start a local Hardhat node
       run: npx hardhat node & sleep 3; npx hardhat --version
-      if: ${{ matrix.network == "localhost" }}
+      if: ${{ matrix.network == localhost }}
     
     - name: Compile smart contract
       run: |
