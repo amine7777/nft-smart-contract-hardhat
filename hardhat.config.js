@@ -12,7 +12,7 @@ module.exports = {
   solidity: {
     version: "0.8.10",
   },
-  defaultNetwork: "localhost",
+ // defaultNetwork: "localhost",
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",
