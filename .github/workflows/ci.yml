@@ -50,6 +50,10 @@ jobs:
     - name: Deploy smart contract
       run: |
         npx hardhat run $SCRIPT_PATH --network $NETWORK
+        
+    - name: Verify smart contract on Etherscan
+      run: |
+        npx hardhat verify --network $NETWORK $CONTRACT_ADDRESS 
 
 
 
