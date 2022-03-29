@@ -7,7 +7,7 @@ async function main() {
 
     console.log("Deployed AmineContract to", AmineContractDeployed.address);
     
-    export const CONTRACT_ADDRESS = AmineContractDeployed.address;
+    exports.CONTRACT_ADDRESS = AmineContractDeployed.address;
 
 }
 
