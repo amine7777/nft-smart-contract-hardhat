@@ -6,6 +6,8 @@ async function main() {
     await AmineContractDeployed.deployed();
 
     console.log("Deployed AmineContract to", AmineContractDeployed.address);
+    
+    export const CONTRACT_ADDRESS = AmineContractDeployed.address;
 
 }
 
