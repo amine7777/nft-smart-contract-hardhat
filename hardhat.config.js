@@ -3,6 +3,7 @@
  */
 require('dotenv').config()
 require('@nomiclabs/hardhat-ethers');
+require("@nomiclabs/hardhat-etherscan");
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ENDPOINT = process.env.URL;
