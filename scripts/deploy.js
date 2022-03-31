@@ -4,9 +4,7 @@ async function main() {
     const AmineContractDeployed = await AmineContract.deploy("AmineContractName", "AKA");
     
     await AmineContractDeployed.deployed();
-    console.log(process.env.CONTRACT_ADDRESS = AmineContractDeployed.address);
-    console.log("Deployed AmineContract to", AmineContractDeployed.address);
-    
+    console.log(process.env.CONTRACT_ADDRESS = AmineContractDeployed.address); 
     
 }
 
