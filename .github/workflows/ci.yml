@@ -49,7 +49,7 @@ jobs:
 
     - name: Deploy smart contract
       run: |
-        npx hardhat run $SCRIPT_PATH --network $NETWORK
+        export CONTRACT_ADDRESS=$(npx hardhat run $SCRIPT_PATH --network $NETWORK)
         echo $CONTRACT_ADDRESS
         
     - name: Verify smart contract on Etherscan
