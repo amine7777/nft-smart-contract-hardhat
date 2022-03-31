@@ -51,6 +51,7 @@ jobs:
       run: |
         export CONTRACT_ADDRESS=$(npx hardhat run $SCRIPT_PATH --network $NETWORK)
         echo $CONTRACT_ADDRESS
+        echo "::set-env name=CONTRACT_ADDRESS::$CONTRACT_ADDRESS"
         
     - name: get address
       run: |
