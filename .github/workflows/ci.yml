@@ -52,6 +52,10 @@ jobs:
         export CONTRACT_ADDRESS=$(npx hardhat run $SCRIPT_PATH --network $NETWORK)
         echo $CONTRACT_ADDRESS
         
+    - name: get address
+      run: |
+        echo $CONTRACT_ADDRESS
+        
     - name: Verify smart contract on Etherscan
       run: |
         echo $CONTRACT_ADDRESS
