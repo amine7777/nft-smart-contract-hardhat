@@ -55,7 +55,7 @@ jobs:
         
     - name: Verify smart contract on Etherscan
       run: |
-        npx hardhat verify $CONTRACT_ADDRESS --network $NETWORK 
+        npx hardhat verify $CONTRACT_ADDRESS --network $NETWORK "Constructor argument 1"
       if: ${{ matrix.network == 'rinkeby' }}
         
 
