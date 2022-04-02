@@ -56,7 +56,7 @@ jobs:
     - name: Verify smart contract on Etherscan
       run: |
         npx hardhat verify $CONTRACT_ADDRESS --network $NETWORK 
-      if: ${{ matrix.network == 'localhost' }}
+      if: ${{ matrix.network == 'rinkeby' }}
         
 
 
