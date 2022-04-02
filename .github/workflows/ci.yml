@@ -50,8 +50,14 @@ jobs:
     - name: Deploy smart contract
       run: |
         export CONTRACT_ADDRESS=$(npx hardhat run $SCRIPT_PATH --network $NETWORK)
-        echo $CONTRACT_ADDRESS
+        echo "Please find the smart contract address: ${CONTRACT_ADDRESS}"
+        echo CONTRACT_ADDRESS=$CONTRACT_ADDRESS >> $GITHUB_ENV
+        
+    - name: Verify smart contract on Etherscan
+      run: |
         npx hardhat verify $CONTRACT_ADDRESS --network $NETWORK 
+      if: ${{ matrix.network == 'localhost' }}
+        
 
 
 
